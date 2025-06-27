@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:clipToPadding="false"
+    tools:context=".ui.dataset.DatasetFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="90dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#1B263B"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/icon_header"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/satellite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Stellar Classification Dataset"
+                    android:textColor="#E0E1DD"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/icon_header"
+                    app:layout_constraintTop_toTopOf="@+id/icon_header" />
+
+                <TextView
+                    android:id="@+id/text_subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sloan Digital Sky Survey (SDSS) DR17"
+                    android:textColor="#A9B4C2"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/text_title"
+                    app:layout_constraintStart_toStartOf="@+id/text_title"
+                    app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#1B263B"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Deskripsi"
+                    android:textAllCaps="true"
+                    android:textColor="#41A6FF"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="Dataset ini berisi data dari rilis ke-17 Sloan Digital Sky Survey (SDSS). Tujuannya adalah untuk mengklasifikasikan objek langit ke dalam tiga kategori utama: Bintang (Star), Galaksi (Galaxy), dan Kuasar (Quasar/QSO)."
+                    android:textColor="#A9B4C2"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_kaggle_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#1B263B"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_description">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/link"
+                    app:tint="#41A6FF"
+                    tools:ignore="ContentDescription" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Lihat Dataset di Kaggle"
+                    android:textColor="#E0E1DD"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_features_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="ATRIBUT DATA"
+            android:textAllCaps="true"
+            android:textColor="#41A6FF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_kaggle_link" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/features_flexbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:flexWrap="wrap"
+            app:layout_constraintTop_toBottomOf="@+id/text_features_title">
+
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="obj_ID"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="alpha"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="delta"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="u"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="g"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="r"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="i"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="z"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="run_ID"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="rerun_ID"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="cam_col"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="field_ID"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="spec_obj_ID"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="class"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="redshift"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="plate"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="MJD"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView style="@style/StellarFeatureCard">
+                <TextView style="@style/StellarFeatureText" android:text="fiber_ID"/>
+            </androidx.cardview.widget.CardView>
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <TextView
+            android:id="@+id/text_dataset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="CONTOH DATA"
+            android:textAllCaps="true"
+            android:textColor="#41A6FF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/features_flexbox" />
+
+        <HorizontalScrollView
+            android:id="@+id/dataset_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/text_dataset_title">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="obj_ID" />
+                        <TextView style="@style/StellarColumnData" android:text="1237661382772375563\n1237663784734490755\n1237678015447787526\n1237661382772506849" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="alpha" />
+                        <TextView style="@style/StellarColumnData" android:text="183.531326\n183.598371\n183.870370\n183.883288" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="delta" />
+                        <TextView style="@style/StellarColumnData" android:text="0.089693\n0.135285\n0.049911\n0.092557" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="u" />
+                        <TextView style="@style/StellarColumnData" android:text="19.47406\n18.66280\n18.95819\n22.21396" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="g" />
+                        <TextView style="@style/StellarColumnData" android:text="17.04240\n17.21449\n18.15890\n19.42718" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="r" />
+                        <TextView style="@style/StellarColumnData" android:text="16.13560\n16.67637\n17.93540\n18.58235" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="i" />
+                        <TextView style="@style/StellarColumnData" android:text="15.96770\n16.48922\n17.78870\n18.32750" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="z" />
+                        <TextView style="@style/StellarColumnData" android:text="15.91150\n16.39150\n17.47100\n18.16030" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="class" />
+                        <TextView style="@style/StellarColumnData" android:text="STAR\nGALAXY\nQSO\nSTAR" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/StellarColumnCard">
+                    <LinearLayout style="@style/StellarColumnContent">
+                        <TextView style="@style/StellarColumnHeader" android:text="redshift" />
+                        <TextView style="@style/StellarColumnData" android:text="-0.000009\n0.123176\n2.542602\n0.000590" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

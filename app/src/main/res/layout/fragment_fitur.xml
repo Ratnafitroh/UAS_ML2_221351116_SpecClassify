@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:clipToPadding="false"
+    tools:context=".ui.fitur.FiturFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="90dp">
+
+        <!-- Header Utama -->
+        <TextView
+            android:id="@+id/text_fitur_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="Fitur untuk Klasifikasi"
+            android:textColor="#E0E1DD"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_fitur_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Atribut yang digunakan oleh model untuk melakukan prediksi"
+            android:textColor="#A9B4C2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_fitur_title" />
+
+        <!-- Container untuk daftar fitur -->
+        <LinearLayout
+            android:id="@+id/fitur_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/text_fitur_subtitle">
+
+            <!-- Card Fitur 1: u -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_u"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/ultraviolet"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_u"
+                        style="@style/FeatureExplanationName"
+                        android:text="'u' (Ultraviolet)"
+                        app:layout_constraintStart_toEndOf="@id/image_u"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_u"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur kecerahan di spektrum ultraviolet (354 nm). Penting untuk mendeteksi objek muda &amp; panas seperti kuasar."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_u"
+                        app:layout_constraintTop_toBottomOf="@id/name_u" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Fitur 2: g -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_g"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/galaksi_hijau"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_g"
+                        style="@style/FeatureExplanationName"
+                        android:text="'g' (Green)"
+                        app:layout_constraintStart_toEndOf="@id/image_g"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_g"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur kecerahan di spektrum hijau (477 nm). Indikator warna umum untuk membedakan jenis bintang dan galaksi."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_g"
+                        app:layout_constraintTop_toBottomOf="@id/name_g" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Fitur 3: r -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_r"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/katai_merah"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_r"
+                        style="@style/FeatureExplanationName"
+                        android:text="'r' (Red)"
+                        app:layout_constraintStart_toEndOf="@id/image_r"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_r"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur kecerahan di spektrum merah (623 nm). Efektif untuk mengamati bintang dingin dan galaksi yang jauh."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_r"
+                        app:layout_constraintTop_toBottomOf="@id/name_r" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Fitur 4: i -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_i"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/debu"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_i"
+                        style="@style/FeatureExplanationName"
+                        android:text="'i' (Infrared)"
+                        app:layout_constraintStart_toEndOf="@id/image_i"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_i"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur kecerahan di inframerah-dekat (762 nm). Dapat menembus debu, berguna untuk mempelajari inti galaksi."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_i"
+                        app:layout_constraintTop_toBottomOf="@id/name_i" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Fitur 5: z -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_z"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/hd_galaxy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_z"
+                        style="@style/FeatureExplanationName"
+                        android:text="'z' (Infrared)"
+                        app:layout_constraintStart_toEndOf="@id/image_z"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_z"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur kecerahan di inframerah jauh (913 nm). Sensitif terhadap objek yang sangat dingin atau sangat jauh."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_z"
+                        app:layout_constraintTop_toBottomOf="@id/name_z" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Fitur 6: redshift -->
+            <androidx.cardview.widget.CardView style="@style/FeatureExplanationCard">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/FeatureExplanationLayout">
+                    <!-- TODO: Ganti dengan gambar yang relevan -->
+                    <ImageView
+                        android:id="@+id/image_redshift"
+                        style="@style/FeatureImage"
+                        android:src="@drawable/red_shift"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"/>
+                    <TextView
+                        android:id="@+id/name_redshift"
+                        style="@style/FeatureExplanationName"
+                        android:text="Redshift"
+                        app:layout_constraintStart_toEndOf="@id/image_redshift"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        style="@style/FeatureDataType"
+                        android:text="float64"
+                        app:layout_constraintBaseline_toBaselineOf="@id/name_redshift"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        style="@style/FeatureExplanationDescription"
+                        android:text="Mengukur peregangan cahaya akibat perluasan alam semesta. Pembeda utama antara bintang lokal dan galaksi/kuasar jauh."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_redshift"
+                        app:layout_constraintTop_toBottomOf="@id/name_redshift" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

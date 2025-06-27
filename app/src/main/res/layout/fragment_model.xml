@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:clipToPadding="false"
+    tools:context=".ui.model.ModelFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="90dp">
+
+        <!-- Header Utama -->
+        <TextView
+            android:id="@+id/text_model_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="ARSITEKTUR MODEL"
+            android:textColor="#E0E1DD"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_model_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Artificial Neural Network (ANN) untuk Klasifikasi Stellar"
+            android:textColor="#A9B4C2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_model_title" />
+
+        <!-- Deskripsi Arsitektur -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_arc_desc"
+            style="@style/BaseExplanationCard"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/text_model_subtitle"
+            tools:ignore="MissingConstraints">
+            <LinearLayout style="@style/BaseExplanationLayout">
+                <TextView
+                    style="@style/BaseExplanationName"
+                    android:text="Deskripsi Arsitektur" />
+                <TextView
+                    style="@style/BaseExplanationDescription"
+                    android:text="Model ini menggunakan arsitektur Artificial Neural Network (ANN) tipe Multi-Layer Perceptron (MLP) yang dirancang untuk tugas klasifikasi multi-kelas. Tujuannya adalah untuk memprediksi kelas objek langit (Bintang, Galaksi, atau Kuasar) berdasarkan 6 fitur input yang telah diproses." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Header Data Preprocessing -->
+        <TextView
+            android:id="@+id/text_preprocessing_header"
+            style="@style/SectionHeader"
+            android:text="Tahap 1: Data Preprocessing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_arc_desc" />
+
+        <!-- Step 1: Drop Columns -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_step1"
+            style="@style/BaseExplanationCard"
+            app:layout_constraintTop_toBottomOf="@id/text_preprocessing_header"
+            tools:ignore="MissingConstraints">
+            <LinearLayout style="@style/BaseExplanationLayout">
+                <TextView style="@style/BaseExplanationName" android:text="1. Feature Selection"/>
+                <TextView style="@style/CodeBlock" android:text="df.drop([&quot;obj_ID&quot;, ..., &quot;fiber_ID&quot;], axis=1, inplace=True)"/>
+                <TextView style="@style/BaseExplanationDescription" android:layout_marginTop="8dp" android:text="Langkah ini menghapus kolom-kolom yang tidak relevan untuk prediksi, seperti ID unik atau data observasi teknis. Tujuannya adalah untuk menyisakan hanya fitur-fitur yang memiliki nilai prediktif (u, g, r, i, z, redshift, dan class)." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Step 2: Label Encoding -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_step2"
+            style="@style/BaseExplanationCard"
+            app:layout_constraintTop_toBottomOf="@id/card_step1"
+            tools:ignore="MissingConstraints">
+            <LinearLayout style="@style/BaseExplanationLayout">
+                <TextView style="@style/BaseExplanationName" android:text="2. Label Encoding"/>
+                <TextView style="@style/CodeBlock" android:text="label_encoder = LabelEncoder()\ny_encoded = label_encoder.fit_transform(y)"/>
+                <TextView style="@style/BaseExplanationDescription" android:layout_marginTop="8dp" android:text="Kolom target 'class' berisi teks ('STAR', 'GALAXY', 'QSO'). Model machine learning membutuhkan data numerik. LabelEncoder mengubah setiap label teks unik menjadi angka integer (misal: STAR -> 2, GALAXY -> 1, QSO -> 0)." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Step 3: Scaling & Splitting -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_step3"
+            style="@style/BaseExplanationCard"
+            app:layout_constraintTop_toBottomOf="@id/card_step2">
+            <LinearLayout style="@style/BaseExplanationLayout">
+                <TextView style="@style/BaseExplanationName" android:text="3. One-Hot Encoding, Scaling &amp; Splitting"/>
+                <TextView style="@style/CodeBlock" android:text="y_encoded = tf.keras.utils.to_categorical(y_encoded)\nscaler = MinMaxScaler()\nX_scaled = scaler.fit_transform(X)\nX_train, X_test, ... = train_test_split(...)"/>
+                <TextView style="@style/BaseExplanationDescription" android:layout_marginTop="8dp" android:text="• to_categorical: Mengubah label integer menjadi format One-Hot Encoding (misal: 2 -> [0,0,1]), yang ideal untuk output Softmax.\n• MinMaxScaler: Menyesuaikan skala semua fitur input ke rentang [0, 1] agar tidak ada fitur yang mendominasi proses training.\n• train_test_split: Membagi dataset menjadi data latih (80%) dan data uji (20%) untuk melatih dan mengevaluasi model secara objektif." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Header Modelling -->
+        <TextView
+            android:id="@+id/text_modelling_header"
+            style="@style/SectionHeader"
+            android:text="Tahap 2: Modelling"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_step3" />
+
+        <!-- Modelling Architecture -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_model_arc"
+            style="@style/BaseExplanationCard"
+            app:layout_constraintTop_toBottomOf="@id/text_modelling_header">
+            <LinearLayout style="@style/BaseExplanationLayout">
+                <TextView style="@style/BaseExplanationName" android:text="Arsitektur Model Sequential"/>
+                <TextView style="@style/CodeBlock" android:text="model = keras.Sequential([\n    keras.Input(shape=(6,)),\n    layers.Dense(128, activation='relu'),\n    layers.Dense(64, activation='relu'),\n    layers.Dense(32, activation='relu'),\n    layers.Dense(3, activation='softmax')\n])"/>
+                <TextView style="@style/BaseExplanationDescription" android:layout_marginTop="12dp" android:text="Model ini disusun secara sekuensial (lapisan demi lapisan) dari input hingga output." />
+
+                <!-- Breakdown Arsitektur -->
+                <TextView style="@style/SubSectionHeader" android:text="Input Layer"/>
+                <TextView style="@style/BaseExplanationDescription" android:text="• Didefinisikan oleh keras.Input(shape=(6,)).\n• Menerima 6 fitur input (u, g, r, i, z, redshift) untuk setiap sampel data."/>
+
+                <TextView style="@style/SubSectionHeader" android:text="Hidden Layers"/>
+                <TextView style="@style/BaseExplanationDescription" android:text="• Terdiri dari 3 lapisan Dense (fully-connected) dengan masing-masing 128, 64, dan 32 neuron.\n• Menggunakan fungsi aktivasi ReLU (Rectified Linear Unit) untuk memperkenalkan non-linearitas, memungkinkan model mempelajari pola yang kompleks."/>
+
+                <TextView style="@style/SubSectionHeader" android:text="Output Layer"/>
+                <TextView style="@style/BaseExplanationDescription" android:text="• Lapisan Dense terakhir dengan 3 neuron, sesuai jumlah kelas (STAR, GALAXY, QSO).\n• Menggunakan fungsi aktivasi Softmax untuk menghasilkan probabilitas untuk setiap kelas, di mana total probabilitasnya adalah 1."/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

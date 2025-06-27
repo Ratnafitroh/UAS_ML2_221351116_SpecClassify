@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="FeatureCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="cardBackgroundColor">#212F45</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="FeatureLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="FeatureName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#E0E1DD</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="FeatureDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+
+    </style>
+
+
+    <!-- Style untuk setiap CardView kecil di dalam FlexboxLayout -->
+    <style name="StellarFeatureCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardBackgroundColor">#1B263B</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+        <!-- Menambahkan margin agar ada jarak antar kartu -->
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <!-- Style untuk TextView di dalam CardView kecil -->
+    <style name="StellarFeatureText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#E0E1DD</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+    <!-- Style untuk CardView Penjelasan Fitur -->
+    <style name="FeatureExplanationCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="cardBackgroundColor">#1B263B</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Ganti LinearLayout dengan ConstraintLayout -->
+    <style name="FeatureExplanationLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Style untuk ImageView Fitur -->
+    <style name="FeatureImage">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- Style untuk Nama Fitur -->
+    <style name="FeatureExplanationName">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#41A6FF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <!-- Style BARU untuk Tipe Data -->
+    <style name="FeatureDataType">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_data_type</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Style untuk Deskripsi Fitur -->
+    <style name="FeatureExplanationDescription">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <!-- Base Card Style for this screen -->
+    <style name="BaseExplanationCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="cardBackgroundColor">#1B263B</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Base LinearLayout inside the card -->
+    <style name="BaseExplanationLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Title inside the card -->
+    <style name="BaseExplanationName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#41A6FF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Description text inside the card -->
+    <style name="BaseExplanationDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <!-- Style for section headers (e.g., Tahap 1) -->
+    <style name="SectionHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:text">ATRIBUT DATA</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#41A6FF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Style for subsection headers (e.g., Input Layer) -->
+    <style name="SubSectionHeader" parent="BaseExplanationDescription">
+        <item name="android:textColor">#E0E1DD</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+    <!-- Style for the code blocks -->
+    <style name="CodeBlock">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_code_block</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">#BDE0FE</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#B0B8C4</item>
+        <item name="hintTextColor">#B0B8C4</item>
+        <item name="boxStrokeColor">#41A6FF</item>
+    </style>
+
+    <style name="StellarInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#A9B4C2</item>
+        <item name="hintTextColor">@color/edit_text_hint_color</item>
+        <item name="boxStrokeColor">@color/edit_text_stroke_color</item>
+    </style>
+    <style name="AboutPageCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="cardBackgroundColor">#1B263B</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Style umum untuk LinearLayout di dalam Card -->
+    <style name="AboutPageLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Style untuk judul di setiap Card -->
+    <style name="AboutPageSectionTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#41A6FF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Style untuk teks deskripsi umum -->
+    <style name="AboutPageDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <!-- Style untuk teks info pengembang -->
+    <style name="DeveloperInfoText" parent="AboutPageDescription">
+        <item name="android:textColor">#E0E1DD</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="StellarColumnCard">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="cardBackgroundColor">#1B263B</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="StellarColumnContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="StellarColumnHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">#41A6FF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="StellarColumnData">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">#A9B4C2</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+</resources>

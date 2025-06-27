@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:clipToPadding="false"
+    tools:context=".ui.tentang.TentangFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="90dp">
+
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/stellar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            app:tint="@android:color/white" />
+
+
+        <TextView
+            android:id="@+id/text_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-black"
+            android:text="SpecClassify"
+            android:textColor="#E0E1DD"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_icon" />
+
+        <TextView
+            android:id="@+id/text_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#A9B4C2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_app_name"
+            tools:text="Versi 1.0" />
+
+        <!-- Card: Deskripsi Aplikasi -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_about_app"
+            style="@style/AboutPageCard"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/text_app_version"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout style="@style/AboutPageLayout">
+
+                <TextView
+                    style="@style/AboutPageSectionTitle"
+                    android:text="Tentang Aplikasi" />
+
+                <TextView
+                    style="@style/AboutPageDescription"
+                    android:text="SpecClassify adalah aplikasi mobile yang dirancang untuk mengklasifikasikan objek langit berdasarkan data fotometrik dari Sloan Digital Sky Survey (SDSS). Dengan menggunakan model Artificial Neural Network (ANN), aplikasi ini dapat memprediksi apakah sebuah objek merupakan Bintang, Galaksi, atau Kuasar." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Info Pengembang -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_developer"
+            style="@style/AboutPageCard"
+            app:layout_constraintTop_toBottomOf="@id/card_about_app"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout style="@style/AboutPageLayout">
+
+                <TextView
+                    style="@style/AboutPageSectionTitle"
+                    android:text="Dikembangkan Oleh" />
+
+                <TextView
+                    style="@style/DeveloperInfoText"
+                    android:text="Ratna Nurfitroh Hanifah"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/DeveloperInfoText"
+                    android:text="221351116" />
+
+                <TextView
+                    style="@style/DeveloperInfoText"
+                    android:text="Malam A" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Sumber Data -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_data_source"
+            style="@style/AboutPageCard"
+            app:layout_constraintTop_toBottomOf="@id/card_developer"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout style="@style/AboutPageLayout">
+
+                <TextView
+                    style="@style/AboutPageSectionTitle"
+                    android:text="Sumber Data" />
+
+                <TextView
+                    style="@style/AboutPageDescription"
+                    android:text="Model pada aplikasi ini dilatih menggunakan dataset 'Stellar Classification Dataset - SDSS17' yang tersedia secara publik di Kaggle." />
+                <TextView
+                    android:id="@+id/link_kaggle"
+                    style="@style/AboutPageDescription"
+                    android:layout_marginTop="8dp"
+                    android:text="Lihat Dataset di Kaggle"
+                    android:textColor="#41A6FF"
+                    android:autoLink="web"
+                    android:linksClickable="true"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Teknologi -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_tech"
+            style="@style/AboutPageCard"
+            app:layout_constraintTop_toBottomOf="@id/card_data_source"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout style="@style/AboutPageLayout">
+
+                <TextView
+                    style="@style/AboutPageSectionTitle"
+                    android:text="Teknologi yang Digunakan" />
+
+                <TextView
+                    style="@style/AboutPageDescription"
+                    android:text="•  Android (Kotlin)\n•  TensorFlow Lite\n•  Material Design Components" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

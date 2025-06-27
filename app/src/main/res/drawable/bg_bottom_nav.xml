@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Ganti warna ini agar sesuai dengan warna kartu di aplikasi Anda -->
+    <solid android:color="#1B263B" />
+
+    <!-- Sesuaikan radius ini untuk mengubah tingkat kelengkungan sudut -->
+    <corners android:radius="24dp" />
+
+</shape>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SpecClassify</string>
+    <string name="title_dataset">Dataset</string>
+    <string name="title_fitur">Fitur</string>
+    <string name="title_model">Model</string>
+    <string name="title_simulasi">Simulasi</string>
+    <string name="title_tentang">Tentang</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

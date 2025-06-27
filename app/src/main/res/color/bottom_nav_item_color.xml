@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Warna untuk item yang aktif (checked) - Warna aksen biru -->
+    <item android:color="#41A6FF" android:state_checked="true" />
+
+    <!-- Warna untuk item yang tidak aktif - Warna abu-abu -->
+    <item android:color="#A9B4C2" android:state_checked="false"/>
+
+</selector>
