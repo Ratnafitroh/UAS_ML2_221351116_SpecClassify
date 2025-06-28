@@ -88,7 +88,7 @@
 
                 <TextView
                     style="@style/DeveloperInfoText"
-                    android:text="Ratna Nurfitroh Hanifah"
+                    android:text="Ratna Nurfitroh Hanifiah"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
